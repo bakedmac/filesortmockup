@@ -1,19 +1,13 @@
-<!DOCTYPE html>
-<html>
-<head>
+<html><head>
 <meta charset="ISO-8859-1">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>Home</title>
-<link rel="stylesheet" type="text/css"
-	href="plugins/bootstrap/css/bootstrap.css">
-<link rel="stylesheet" type="text/css"
-	href="plugins/bootstrap/css/bootstrap-theme.css">
-<link rel="stylesheet" type="text/css"
-	href="plugins/font-awesome/css/font-awesome.css">
+<link rel="stylesheet" type="text/css" href="plugins/bootstrap/css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="plugins/bootstrap/css/bootstrap-theme.css">
+<link rel="stylesheet" type="text/css" href="plugins/font-awesome/css/font-awesome.css">
 <!-- <link rel="stylesheet" type="text/css" -->
 <!-- 	href="plugins/jquery-sortable/css/application.css"> -->
-	<link rel="stylesheet" type="text/css"
-	href="styles/common.css">
+	<link rel="stylesheet" type="text/css" href="styles/common.css">
 <script type="text/javascript" src="plugins/jquery/jquery-3.1.0.js"></script>
 <script type="text/javascript" src="plugins/jquery-ui/jquery-ui.js"></script>
 <script type="text/javascript" src="plugins/bootstrap/js/bootstrap.js"></script>
@@ -21,17 +15,73 @@
 <script type="text/javascript" src="scripts/home.js"></script>
 </head>
 <body>
-	<ol class="sortable">
-		<li class="no-nesting"><div class="no-nesting">No Nesting</div></li>
-		<li class="no-nesting"><div class="no-nesting">Nesting</div></li>
-		<li>
-			<div>Some content</div>
-			<ol>
-				<li><div>Some sub-item content</div></li>
-				<li><div>Some sub-item content</div></li>
-			</ol>
+	<ol class="sortable ui-sortable">
+		<li class="no-nesting">
+			<div class="file-box">
+				<div class="move-icon-holder">
+					<i class="fa fa-arrows move-icon" aria-hidden="true"></i>
+				</div>
+				<div class="file-details-holder">
+					<div class="title-holder">
+						<span class="file-title">Auction Pack.pdf</span>
+						<i class="fa fa-check-circle check-icon" aria-hidden="true"></i>
+						<i class="fa fa-trash-o delete-icon" aria-hidden="true"></i>
+					</div>
+					<div class="file-details">Added Thu Feb 16 2017 13:42:51 GMT+1300</div>
+				</div>
+			</div>
 		</li>
-		<li><div>Some content</div></li>
+		<li class="no-nesting">
+			<div class="file-box">
+				<div class="move-icon-holder">
+					<i class="fa fa-arrows move-icon" aria-hidden="true"></i>
+				</div>
+				<div class="file-details-holder">
+					<div class="title-holder">
+						<span class="file-title">Auction Pack.pdf</span>
+						<i class="fa fa-check-circle check-icon" aria-hidden="true"></i>
+						<i class="fa fa-trash-o delete-icon" aria-hidden="true"></i>
+					</div>
+					<div class="file-details">Added Thu Feb 16 2017 13:42:51 GMT+1300</div>
+				</div>
+			</div>
+		</li>
+		<li>
+			<div class="file-box">
+				<div class="move-icon-holder">
+					<i class="fa fa-arrows move-icon" aria-hidden="true"></i>
+				</div>
+				<div class="file-details-holder">
+					<div class="title-holder">
+						<span class="file-title"><span class="folder-title">REAA</span> (folder)</span>
+						<i class="fa fa-pencil edit-icon" aria-hidden="true"></i>
+						<i class="fa fa-trash-o delete-icon" aria-hidden="true"></i>
+					</div>
+				</div>
+			</div>
+		</li>
+		
+<!-- 		<li><div>Nesting</div></li> -->
+<!-- 		<li> -->
+<!-- 			<div>Some content</div> -->
+<!-- 			<ol> -->
+<!-- 				<li><div>Some sub-item content</div></li> -->
+<!-- 				<li><div>Some sub-item content</div></li> -->
+<!-- 			</ol> -->
+<!-- 		</li> -->
+<!-- 		<li><div>Some content</div></li> -->
 	</ol>
-</body>
-</html>
+	
+	<div id="buttons-holder">
+		<div class="custom-button" id="new-files-button">
+			<i class="fa fa-file file-icon" aria-hidden="true"></i>
+			New Files
+		</div>
+		<div class="custom-button" id="new-folder-button">
+			<i class="fa fa-folder folder-icon" aria-hidden="true"></i>
+			New Folder
+		</div>
+	</div>
+	
+
+</body></html>

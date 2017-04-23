@@ -27,7 +27,7 @@ function makeSortable(){
 			handle: 'div',
 			items: 'li',
 			toleranceElement: '> div',
-			disableNesting: 'no-nesting'
+			disableNestingClass: 'no-nesting'
 		});
 
 	});

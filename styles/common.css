@@ -18,6 +18,60 @@ html {
 			-mox-box-shadow:		1px 1px 8px #444;
 			-webkit-box-shadow:		1px -1px 8px #444;
 		}
+		
+		.move-icon-holder, .file-details-holder{
+			display: inline-block;
+			padding-left: 0.3em;
+			padding-right: 0.3em;
+		}
+		
+		.move-icon-holder{
+			vertical-align: top;
+		}
+		
+		.file-title{
+			font-size: 1.2em;
+			color: #01709e;
+		}
+		
+		.folder-title{
+			font-weight: bold;
+		}
+		
+		.check-icon{
+			    color: #05b473;
+    			font-size: 1.4em;
+		}
+		
+		.file-title, .check-icon, .edit-icon{
+			padding-right: 0.2em;
+		}
+		
+		.file-icon, .folder-icon{
+			padding-right: 0.5em;
+		}
+		
+		.file-details{
+			    font-size: 0.9em;
+    			color: gray;
+		}
+		
+		.move-icon{
+			font-size: 1.2em;
+		    color: gray;
+		    padding-top: 0.2em;
+		}
+		
+		.custom-button{
+			display: inline-block;
+		    padding: 0.6em;
+		    background-color: #13c58b;
+		    color: white;
+		    border-radius: 3px;
+		    border-bottom: 2px solid #14a568;
+		    margin-right: 1em;
+
+		}
 
 		a, a:visited {
 			color: #4183C4;
@@ -79,23 +133,12 @@ html {
 			padding: 0;
 		}
 
-		.sortable li div  {
+		.file-box  {
 			border: 1px solid #d4d4d4;
-			-webkit-border-radius: 3px;
-			-moz-border-radius: 3px;
-			border-radius: 3px;
-			border-color: #D4D4D4 #D4D4D4 #BCBCBC;
 			padding: 6px;
 			margin: 0;
 			cursor: move;
-			background: #f6f6f6;
-			background: -moz-linear-gradient(top,  #ffffff 0%, #f6f6f6 47%, #ededed 100%);
-			background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(47%,#f6f6f6), color-stop(100%,#ededed));
-			background: -webkit-linear-gradient(top,  #ffffff 0%,#f6f6f6 47%,#ededed 100%);
-			background: -o-linear-gradient(top,  #ffffff 0%,#f6f6f6 47%,#ededed 100%);
-			background: -ms-linear-gradient(top,  #ffffff 0%,#f6f6f6 47%,#ededed 100%);
-			background: linear-gradient(to bottom,  #ffffff 0%,#f6f6f6 47%,#ededed 100%);
-			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed',GradientType=0 );
+			background: white;
 		}
 
 		.sortable li.mjs-nestedSortable-branch div {
