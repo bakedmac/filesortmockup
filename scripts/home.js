@@ -5,74 +5,21 @@ $(document).ready(function(){
 function makeSortable(){
 	setupNewFolderModal();
 	setupEditFolderModal();
-//	$('ol.sortable').nestedSortable({
-//		forcePlaceholderSize: true,
-//		handle: 'div',
-//		helper:	'clone',
-//		items: 'li',
-//		opacity: .6,
-//		placeholder: 'placeholder',
-//		revert: 250,
-//		tabSize: 25,
-//		tolerance: 'pointer',
-//		toleranceElement: '> div',
-//		maxLevels: 3,
-//
-//		isTree: true,
-//		expandOnHover: 700,
-//		startCollapsed: true
-//	});
+	bindButtonFunctions();
 
-		$('.sortable').nestedSortable({
-			handle: '.move-icon-holder',
-			items: 'li',
-			toleranceElement: '> div',
-			disableNestingClass: 'no-nesting'
-		});
+	$('.sortable').nestedSortable({
+		handle: '.move-icon-holder',
+		items: 'li',
+		toleranceElement: '> div',
+		disableNestingClass: 'no-nesting'
+	});
 }
 
-function setupNewFolderModal(){
-	// Get the modal
-	var modal = document.getElementById('myModal');
-
-	// Get the button that opens the modal
-	var btn = document.getElementById("new-folder-button");
-
-	// Get the <span> element that closes the modal
-	var span = document.getElementById("cancel-button");
-	
-	var save = document.getElementById("save-button");
-
-	// When the user clicks the button, open the modal 
-	btn.onclick = function() {
-	    modal.style.display = "block";
-	}
-
-	// When the user clicks on <span> (x), close the modal
-	span.onclick = function() {
-	    modal.style.display = "none";
-	    $('#folder-name-input').val("")
-	}
-
-	// When the user clicks anywhere outside of the modal, close it
-	window.onclick = function(event) {
-	    if (event.target == modal) {
-	        modal.style.display = "none";
-	        $('#folder-name-input').val("");
-	    }
-	}
-	
-	save.onclick = function() {
-		var fileName = $('#folder-name-input').val()
-		addNewFolder(fileName)
-	    modal.style.display = "none";
-		$('#folder-name-input').val("");
-	}
-}
-
-function setupEditFolderModal(){
-	// Get the modal
-	var modal = document.getElementById('edit-modal');
+function bindButtonFunctions(){
+	$("#new-folder-button").click(function() {
+		var modal = $("#myModal");
+	    modal.css("display","block");
+	});
 	
 	$(".delete-icon").unbind();
 	$(".delete-icon").click(function(){
@@ -80,41 +27,60 @@ function setupEditFolderModal(){
 		folderToDelete.remove();
 	})
 	
-
-	// Get the button that opens the modal
 	$(".edit-icon").unbind();
 	$(".edit-icon").click(function(){
-		modal.style.display = "block";
+		var modal = $("#edit-modal");
+		modal.css("display","block");
 		var folderName = $(this).closest(".title-holder").find(".folder-title").text();
 		$('#folder-rename-input').val(folderName);
 		currentlyClickedNameHolder = $(this).closest(".title-holder").find(".folder-title")
 	})
+}
 
-	// Get the <span> element that closes the modal
-	var span = document.getElementById("cancel-rename-button");
-	
-	var save = document.getElementById("save-rename-button");
+function setupNewFolderModal(){
+	var modal = $("#myModal");
 
-	// When the user clicks on <span> (x), close the modal
-	span.onclick = function() {
-	    modal.style.display = "none";
-	    $('#folder-rename-input').val("")
-	}
+	$("#cancel-button").click(function() {
+		modal.css("display","none");
+	    $('#folder-name-input').val("")
+	});
 
-	// When the user clicks anywhere outside of the modal, close it
-	window.onclick = function(event) {
+	$(window).click(function(event) {
 	    if (event.target == modal) {
-	        modal.style.display = "none";
+	    	modal.css("display","none");
+	        $('#folder-name-input').val("");
+	    }
+	});
+	
+	$("#save-button").click(function() {
+		var fileName = $('#folder-name-input').val()
+		addNewFolder(fileName)
+	    modal.css("display","none");
+		$('#folder-name-input').val("");
+	})
+}
+
+function setupEditFolderModal(){
+	var modal = $("#edit-modal");
+
+	$("#cancel-rename-button").click(function() {
+		modal.css("display","none");
+	    $('#folder-rename-input').val("")
+	});
+
+	$(window).click(function(event) {
+	    if (event.target == modal) {
+	    	modal.css("display","none");
 	        $('#folder-rename-input').val("");
 	    }
-	}
+	});
 	
-	save.onclick = function() {
+	$("#save-rename-button").click(function() {
 		var editedName = $('#folder-rename-input').val();
 		currentlyClickedNameHolder.text(editedName);
-	    modal.style.display = "none";
+		modal.css("display","none");
 		$('#folder-rename-input').val("");
-	}
+	})
 }
 
 function addNewFolder(fileName){
@@ -124,5 +90,5 @@ function addNewFolder(fileName){
 	newFolder.find(".folder-title").text(fileName);
 	var listHolder = $("#list-holder");
 	listHolder.append(newFolder);
-	setupEditFolderModal();
+	bindButtonFunctions();
 }
