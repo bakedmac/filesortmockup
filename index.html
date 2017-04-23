@@ -15,7 +15,7 @@
 <script type="text/javascript" src="scripts/home.js"></script>
 </head>
 <body>
-	<ol class="sortable ui-sortable">
+	<ol class="sortable ui-sortable" id="list-holder">
 		<li class="no-nesting">
 			<div class="file-box">
 				<div class="move-icon-holder">
@@ -38,7 +38,67 @@
 				</div>
 				<div class="file-details-holder">
 					<div class="title-holder">
-						<span class="file-title">Auction Pack.pdf</span>
+						<span class="file-title">Building Inspection.pdf</span>
+						<i class="fa fa-check-circle check-icon" aria-hidden="true"></i>
+						<i class="fa fa-trash-o delete-icon" aria-hidden="true"></i>
+					</div>
+					<div class="file-details">Added Thu Feb 16 2017 13:42:51 GMT+1300</div>
+				</div>
+			</div>
+		</li>
+		<li class="no-nesting">
+			<div class="file-box">
+				<div class="move-icon-holder">
+					<i class="fa fa-arrows move-icon" aria-hidden="true"></i>
+				</div>
+				<div class="file-details-holder">
+					<div class="title-holder">
+						<span class="file-title">Certificate of Title.pdf</span>
+						<i class="fa fa-check-circle check-icon" aria-hidden="true"></i>
+						<i class="fa fa-trash-o delete-icon" aria-hidden="true"></i>
+					</div>
+					<div class="file-details">Added Thu Feb 16 2017 13:42:51 GMT+1300</div>
+				</div>
+			</div>
+		</li>
+		<li class="no-nesting">
+			<div class="file-box">
+				<div class="move-icon-holder">
+					<i class="fa fa-arrows move-icon" aria-hidden="true"></i>
+				</div>
+				<div class="file-details-holder">
+					<div class="title-holder">
+						<span class="file-title">EQC Documentation.pdf</span>
+						<i class="fa fa-check-circle check-icon" aria-hidden="true"></i>
+						<i class="fa fa-trash-o delete-icon" aria-hidden="true"></i>
+					</div>
+					<div class="file-details">Added Thu Feb 16 2017 13:42:51 GMT+1300</div>
+				</div>
+			</div>
+		</li>
+		<li class="no-nesting">
+			<div class="file-box">
+				<div class="move-icon-holder">
+					<i class="fa fa-arrows move-icon" aria-hidden="true"></i>
+				</div>
+				<div class="file-details-holder">
+					<div class="title-holder">
+						<span class="file-title">REAA Professional Conduct and Client Care Rules.pdf</span>
+						<i class="fa fa-check-circle check-icon" aria-hidden="true"></i>
+						<i class="fa fa-trash-o delete-icon" aria-hidden="true"></i>
+					</div>
+					<div class="file-details">Added Thu Feb 16 2017 13:42:51 GMT+1300</div>
+				</div>
+			</div>
+		</li>
+		<li class="no-nesting">
+			<div class="file-box">
+				<div class="move-icon-holder">
+					<i class="fa fa-arrows move-icon" aria-hidden="true"></i>
+				</div>
+				<div class="file-details-holder">
+					<div class="title-holder">
+						<span class="file-title">REAA Presidential Property Sale and Purchase Agreement Guide.pdf</span>
 						<i class="fa fa-check-circle check-icon" aria-hidden="true"></i>
 						<i class="fa fa-trash-o delete-icon" aria-hidden="true"></i>
 					</div>
@@ -47,6 +107,20 @@
 			</div>
 		</li>
 		<li>
+			<div class="file-box">
+				<div class="move-icon-holder">
+					<i class="fa fa-arrows move-icon" aria-hidden="true"></i>
+				</div>
+				<div class="file-details-holder">
+					<div class="title-holder">
+						<span class="file-title"><span class="folder-title">REAA</span> (folder)</span>
+						<i class="fa fa-pencil edit-icon" aria-hidden="true"></i>
+						<i class="fa fa-trash-o delete-icon" aria-hidden="true"></i>
+					</div>
+				</div>
+			</div>
+		</li>
+		<li id="new-folder-template" class="hidden">
 			<div class="file-box">
 				<div class="move-icon-holder">
 					<i class="fa fa-arrows move-icon" aria-hidden="true"></i>
@@ -77,11 +151,61 @@
 			<i class="fa fa-file file-icon" aria-hidden="true"></i>
 			New Files
 		</div>
-		<div class="custom-button" id="new-folder-button">
+		<div class="custom-button" id="new-folder-button" data-toggle="modal" data-target="#myModal">
 			<i class="fa fa-folder folder-icon" aria-hidden="true"></i>
 			New Folder
 		</div>
 	</div>
+	
+	
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="modal-header">
+      <h2 class="modal-header-text">New Folder</h2>
+    </div>
+    <div class="modal-body">
+      <input type="text" id="folder-name-input" placeholder="Folder name..."/>
+    </div>
+    <div class="modal-footer">
+      	<div class="custom-button" id="cancel-button">
+			Cancel
+		</div>
+		<div class="custom-button" id="save-button" data-toggle="modal" data-target="#myModal">
+			Save
+		</div>
+    </div>
+  </div>
+
+</div>
+
+<div id="edit-modal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="modal-header">
+      <h2 class="modal-header-text">Rename Folder</h2>
+    </div>
+    <div class="modal-body">
+      <input type="text" id="folder-rename-input" placeholder="Folder name..."/>
+    </div>
+    <div class="modal-footer">
+      	<div class="custom-button" id="cancel-rename-button">
+			Cancel
+		</div>
+		<div class="custom-button" id="save-rename-button" data-toggle="modal" data-target="#edit-modal">
+			Save
+		</div>
+    </div>
+  </div>
+
+</div>
+
+
+
 	
 
 </body></html>
