@@ -79,6 +79,10 @@ html {
 		    cursor: pointer;
 
 		}
+		
+		#buttons-holder{
+			padding-left: 1em;
+		}
 
 		a, a:visited {
 			color: #4183C4;
@@ -132,7 +136,7 @@ html {
 		}
 
 		ol.sortable {
-			margin: 4em 0;
+			margin: 2em 0;
 		}
 
 		.sortable li {
